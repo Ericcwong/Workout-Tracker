@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker
     useFindAndModify: false
 });
 //Routing
-// app.use(require());
+require("./routes/htmlRouting")(app);
 
 //Create and start server
 app.listen(port, () => {
