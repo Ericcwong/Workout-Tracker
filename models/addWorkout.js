@@ -6,18 +6,27 @@ const Schema = mongoose.Schema;
 const workoutSchema = new Schema({
     workoutName:{
         type: String,
-        required: "Enter a name for this workout"
+        required: "Choose a workout option"
     },
-    workoutSet:{
+    name:{
+        type: String,
+        required: "What is the workout name?"
+    },
+    duration:{
         type: Number,
-        required: "How many sets do you want to do?"
+        required: "How many minutes do you want to workout?"
     },
-    workoutReps:{
+    weight:{
+        type: Number,
+        required: "What is the desired weight?"
+    },
+    reps:{
         type: Number,
         required: "How many reps do you want to do?"
     },
-    workoutTime:{
-        type
+    sets:{
+        type: Number,
+        required: "How many sets do you want to do?"
     }
 });
 

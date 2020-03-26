@@ -5,10 +5,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 //Morgan (Logs all request details, this is also a middleware)
 const morgan = require("morgan");
+
 //assigning port for heroku and localhost
 const port = process.env.port || 9000;
 //Assigning app to express function
 const app = express();
+
+//middleware that logs all request details
+app.use(morgan("short"));
 //middleware that parses json objects and body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,10 +20,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Connects to mongoDB if not it would create one
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",{
-    useNewUrlParser: true,
-    useFindAndModify: false
-});
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",
+//     {
+//         useNewUrlParser: true,
+//         useFindAndModify: false,
+//         useUnifiedTopology: true
+//     },
+//     () => console.log("Connected to DB")
+// );
 //Routing
 require("./routes/htmlRouting")(app);
 
