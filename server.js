@@ -20,17 +20,18 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Connects to mongoDB if not it would create one
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker",
-//     {
-//         useNewUrlParser: true,
-//         useFindAndModify: false,
-//         useUnifiedTopology: true
-//     },
-//     () => console.log("Connected to DB")
-// );
-//Routing
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
+    {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true
+    },
+    () => console.log("Connected to DB")
+);
+// Routing
 require("./routes/htmlRouting")(app);
-
+require("./routes/apiRouting")(app);
+// app.use(require("./routes/apiRouting"));
 //Create and start server
 app.listen(port, () => {
     console.log(`Currently listening on http://localhost:${port}`)

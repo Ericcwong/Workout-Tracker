@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ericcwong/Workout-Tracker#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-router": "0.0.1",
     "mongoose": "^5.9.6",
     "morgan": "^1.10.0",
     "path": "^0.12.7"
