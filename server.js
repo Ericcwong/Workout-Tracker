@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 
 //assigning port for heroku and localhost
-const port = process.env.port || 9000;
+const PORT = process.env.PORT || 9000;
 //Assigning app to express function
 const app = express();
 
@@ -33,6 +33,6 @@ require("./routes/htmlRouting")(app);
 require("./routes/apiRouting")(app);
 // app.use(require("./routes/apiRouting"));
 //Create and start server
-app.listen(port, () => {
-    console.log(`Currently listening on http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(`Currently listening on http://localhost:${PORT}`)
 })
