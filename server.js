@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Connects to mongoDB if not it would create one
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://ericcwong:password123@ds031925.mlab.com:31925/heroku_v05kkd9t",
     {
         useNewUrlParser: true,
         useFindAndModify: false,
