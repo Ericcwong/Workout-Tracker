@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema({
-    workoutName:{
+    day:{type: Date, default: Date.now},
+    exercises: [{
+    type:{
         type: String,
         required: "Choose a workout option"
     },
@@ -28,6 +30,7 @@ const workoutSchema = new Schema({
         type: Number,
         required: "How many sets do you want to do?"
     }
+    }]
 });
 
 const Workout = mongoose.model("workout", workoutSchema);
